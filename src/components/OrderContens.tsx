@@ -1,12 +1,13 @@
 import React from "react";
-import type { OrderItem } from "../types";
+import type { MenuItem, OrderItem } from "../types";
 import { formatCurrency } from "../helpers";
 
 type OrderContensProps = {
   order: OrderItem[];
+  removeItem: (id: MenuItem["id"]) => void;
 };
 
-export default function OrderContens({ order }: OrderContensProps) {
+export default function OrderContens({ order, removeItem }: OrderContensProps) {
   return (
     <div>
       <h2 className=" font-black text-4xl">Consumo</h2>
@@ -29,7 +30,10 @@ export default function OrderContens({ order }: OrderContensProps) {
                   {formatCurrency(item.price * item.quantity)}
                 </p>
               </div>
-              <button className=" bg-red-600 h-8 w-8 rounded-full text-white font-black">
+              <button
+                className=" bg-red-600 h-8 w-8 rounded-full text-white font-black"
+                onClick={() => removeItem(item.id)}
+              >
                 X
               </button>
             </div>
