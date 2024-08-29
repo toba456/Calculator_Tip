@@ -19,13 +19,13 @@ export default function OrderContens({ order, removeItem }: OrderContensProps) {
           order.map((item) => (
             <div
               key={item.id}
-              className=" flex justify-between border-t border-gray-200 py-5 items-center last-of-type:border-b"
+              className=" flex  justify-between border-t border-gray-200 py-5 items-center last-of-type:border-b"
             >
               <div>
-                <p className=" text-lg">
+                <p className=" text-lg w-auto pr-3">
                   {item.name} - {formatCurrency(item.price)}
                 </p>
-                <p className=" font-black">
+                <p className=" font-black w-auto">
                   Cantidad: {item.quantity} -{" "}
                   {formatCurrency(item.price * item.quantity)}
                 </p>
