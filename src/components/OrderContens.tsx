@@ -1,4 +1,3 @@
-import React from "react";
 import type { MenuItem, OrderItem } from "../types";
 import { formatCurrency } from "../helpers";
 
